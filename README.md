@@ -7,7 +7,7 @@ MatlabR2023b
 ## Installations:
 
 Download the files : Simens ECG Signal Processing.mlappinstall, Simens ECG Signal Processing.prj and config.mat, to a local working dirctory on your pc.
-open matlab on your working dirctory and double click on Simens ECG Signal Processing.mlappinstall.
+Open matlab on your working dirctory and double click on Simens ECG Signal Processing.mlappinstall.
 
 This will install the App on your Matlab toolbar:
 
@@ -26,15 +26,15 @@ For example:
 
 Image 2: Siemens log files
 
-For each run the MRI will provide AcquisitionInfo with a time stampt and task/run name and four ECG logs , each corresponding to ECG electrode(channel) attached to the subject.
+For each run the MRI will provide an AcquisitionInfo log with a time stamp and task/run name, and four ECG logs, each corresponding to ECG electrode(channel) attached to the subject.
 
 ## Preperation of Configuration File:
-In the ataached files provided the config.m as an example.
+In the attached files provided config.m is used as an example.
 The config.m file contains: 
 1. Path_data - this is the dirctory containing all subfolders of each subject.
-2. Loc - in each subject folder the location od the directory of Siemens's ECG log files.
-3. Outputpath  - the directory where the results will be saved.
-4. Tasks  - the names of the tasks of the log files for example in the image above "Cartman_Game" (the same as appear in the AcquisitionInfo log) .
+2. Loc - in each subject folder the location of the directory of Siemens's ECG log files.
+3. Outputpath - the directory where the results will be saved.
+4. Tasks - the names of the tasks of the log files. For example in the image above "Cartman_Game" (the same as appeared in the AcquisitionInfo log) .
 
 ![image](https://github.com/user-attachments/assets/b4e55bcb-d89b-4230-a2da-82c975d4d339)
 
@@ -44,15 +44,15 @@ Image 3: config.m file
 
 The easiest way to prepare your own config file is to load an existing file and just change it .
 
-We will open the App from matlab app tool bar (double click on Icon in image 1):
+Open the App from matlab app tool bar (double click on Icon in image 1):
 
 ***only open the App when you are in matlab working directory where the config file is located.
 
-this will open the following window:
+This will open the following window:
 
 ![image](https://github.com/user-attachments/assets/71d9e507-7f39-4638-857d-c9206bb751bd)
 
-press on "Load Existing File" and choose config.m
+Press on "Load Existing File" and choose config.m
 
 ![image](https://github.com/user-attachments/assets/877dd233-0967-48de-97d8-bf1a3e2d89a4)
 
@@ -60,27 +60,39 @@ Now you can manually change to your own configuration.
 
 ***pay attention to "/" if there is or not at the end of the path.
 
-To remove task stand on the task you wish to remove and press "Remove task"
+To remove a task stand on the task you wish to remove and press "Remove task".
 
-To add task enter task name (as it apear in the AcquisitionInfo log) and press "Add task"
-than enter config name and press "Save confif File".
+To add a task enter the task name (as it appears in the AcquisitionInfo log) and press "Add task".
+Then enter config name and press "Save confif File".
 
 ## Run
-1. double click on Icon in image 1.
-2. "Load Existing File" and choose the correct config.m you created and press "Start"
+1. Double click on the Icon in Image 1.
+2. "Load Existing File" and choose the correct config.m you created and press "Start".
 3. You will be transfered to the data loading window:
+
    ![image](https://github.com/user-attachments/assets/c9256b5a-af04-46fa-901c-e255f3b8ae04)
-4. Press "ECG Data Directory" if your configuration is set you will see the folder with all subjects, just continue with Select Folder immdiatly don't change any thing (here you need to make sure that your data architecture as dexcribed in "Preperation of Data ").
-   ![image](https://github.com/user-attachments/assets/eeaa24f1-99a1-4be6-b57c-89b12ca3e800)
-5.Now all Subject list will be loaded into Subject. Choose the Subject you want to visualize and tag , Choose the desired Task and Electrode (default is 1).
-In case of several runs per task on the List Box will apeare all logs for that task.
-**Sometimes there will be Acquisition log but not the corresponding ECG1,ECG2,ECG3 and ECG4 logs, make sure that you have those.
-**All electrode (channels) should work the same, we will only change electrode number if for some reason the data looks noisey on the first channel so we will look for better signal input on the rest of the channels
+5. Press "ECG Data Directory". If your configuration is set you will see the folder with all subjects, just continue with Select Folder immediatly, don't change anything (here you need to make sure that your data architecture is as described in "Preperation of Data ").
 
-![image](https://github.com/user-attachments/assets/cccb5b8c-c6f3-45ea-adb4-3b075e862c0c)
- choose a desired log file and press "Next".
- 6. Lets Tag away :) in the next window we can visualized the clean signal (if you don't see the signal just press >> and << and it will apeare)
- ![image](https://github.com/user-attachments/assets/0590c48f-b1d8-45d5-8ac7-f6aa8d8f0bc9)
+    ![image](https://github.com/user-attachments/assets/eeaa24f1-99a1-4be6-b57c-89b12ca3e800)
+7. Now all subjects will be loaded into "Subject". Choose the Subject you want to visualize and tag. Choose the desired Task and Electrode (default is 1).
+In case of several runs per task, the List Box will show all logs for that task.
+**Sometimes there will be an AcquisitionInfo log but not the corresponding ECG1,ECG2,ECG3 and ECG4 logs, so make sure that you have those as well.
+**All electrodes (channels) should work the same, only change the electrode number if for some reason the data looks noisy on the first channel. In this case, look for a better signal input for the rest of the channels
 
+    ![image](https://github.com/user-attachments/assets/cccb5b8c-c6f3-45ea-adb4-3b075e862c0c)
 
+    Choose a desired log file and press "Next".
+
+ 6. Let's tag away :) in the next window we can visualize the clean signal (if you don't see the signal just press >> and << and it will appear).
+
+    ![image](https://github.com/user-attachments/assets/0590c48f-b1d8-45d5-8ac7-f6aa8d8f0bc9)
+
+    The red circles are the tags of the R-peaks, the yellow * are a local maxima used as refferance.
+    To correctly tag a window use the "Remove Peaks" and "Add Peak" buttons. As appears in the image above not 
+    all red circels are inplace ,  press "Remove Peaks" , stand on each red circle you wish to remove (it will remove the 
+    closest one to the cross (+) apears on the graph), now press "Add Peak" put the cross(+) marker on the peak , this will add a red circle on the closest * local maxima. in case that you identify a R-peak that is not marked with * , use "Special Add" button than place the cross (+) exactly on the R-peak (in this case you have to be very precise).
+    to move between time window use the >> and << buttons.
+
+    The red circles R-peaks uses findpeaks matlab function: https://www.mathworks.com/help/wavelet/ug/r-wave-detection-in-the-ecg.html , at the begining of each file loading you can try and adjust: "MinPeakHeight", "MinPeakProminence" and "MinPeakDistance" all paramaters of findpeaks function.
+    
 
