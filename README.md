@@ -71,10 +71,10 @@ Then enter config name and press "Save confif File".
 3. You will be transfered to the data loading window:
 
    ![image](https://github.com/user-attachments/assets/c9256b5a-af04-46fa-901c-e255f3b8ae04)
-5. Press "ECG Data Directory". If your configuration is set you will see the folder with all subjects, just continue with Select Folder immediatly, don't change anything (here you need to make sure that your data architecture is as described in "Preperation of Data ").
+4. Press "ECG Data Directory". If your configuration is set you will see the folder with all subjects, just continue with Select Folder immediatly, don't change anything (here you need to make sure that your data architecture is as described in "Preperation of Data ").
 
     ![image](https://github.com/user-attachments/assets/eeaa24f1-99a1-4be6-b57c-89b12ca3e800)
-7. Now all subjects will be loaded into "Subject". Choose the Subject you want to visualize and tag. Choose the desired Task and Electrode (default is 1).
+5. Now all subjects will be loaded into "Subject". Choose the Subject you want to visualize and tag. Choose the desired Task and Electrode (default is 1).
 In case of several runs per task, the List Box will show all logs for that task.
 **Sometimes there will be an AcquisitionInfo log but not the corresponding ECG1,ECG2,ECG3 and ECG4 logs, so make sure that you have those as well.
 **All electrodes (channels) should work the same, only change the electrode number if for some reason the data looks noisy on the first channel. In this case, look for a better signal input for the rest of the channels
@@ -105,7 +105,7 @@ Below is an example of a well taged window:
 
    ![image](https://github.com/user-attachments/assets/c7e44882-8720-4faa-a4d0-d01ea5dbe9dd)
 
-
+9. Load new file: use << button on the app upper left side , this will redirect you to the loading window (3.) 
      
     
 
