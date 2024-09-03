@@ -87,25 +87,22 @@ In case of several runs per task, the List Box will show all logs for that task.
 
     ![image](https://github.com/user-attachments/assets/0590c48f-b1d8-45d5-8ac7-f6aa8d8f0bc9)
 
-    The red circles are the tags of the R-peaks, the yellow * are a local maxima used as refferance.
-    To correctly tag a window use the "Remove Peaks" and "Add Peak" buttons. As appears in the image above not 
-    all red circels are inplace ,  press "Remove Peaks" , stand on each red circle you wish to remove (it will remove the 
-    closest one to the cross (+) apears on the graph), now press "Add Peak" put the cross(+) marker on the peak , this will add a red circle on the closest * local maxima. in case that you identify a R-peak that is not marked with * , use "Special Add" button than place the cross (+) exactly on the R-peak (in this case you have to be very precise).
-    to move between time window use the >> and << buttons.
+    The red circles are the tags of the R-peaks, the yellow * are a local maxima used as reference. To correctly tag a window use the "Remove Peaks" and "Add Peak" buttons. As appears in the image above not all red circles are in place , press "Remove Peaks", stand on each red circle you wish to remove (it will remove the closest one to the cross (+) that appears on the graph), now press "Add Peak" and put the cross (+) marker on the peak. This will add a red circle on the closest * local maxima. In case you identify a R-peak that is not marked with *, use the "Special Add" button to place the cross (+) exactly on the R-peak (in this case you have to be very precise). To move between time windows use the >> and << buttons.
 
-    The red circles R-peaks uses findpeaks matlab function: https://www.mathworks.com/help/wavelet/ug/r-wave-detection-in-the-ecg.html , at the begining of each file loading you can try and adjust: "MinPeakHeight", "MinPeakProminence" and "MinPeakDistance" all paramaters of findpeaks function. * only do it once per file before taging don't change every time window.
-Below is an example of a well taged window:
+    The red circles R-peaks use findpeaks matlab function: https://www.mathworks.com/help/wavelet/ug/r-wave-detection-in-the-ecg.html. At the beginning of each file loading 
+    process, you can try and adjust all parameters of findpeaks function: "MinPeakHeight", "MinPeakProminence" and "MinPeakDistance".  * Only do this once per file before 
+    tagging! Don't change every time window. Below is an example of a well tagged window:
 
     ![image](https://github.com/user-attachments/assets/c37cf388-a9cf-4da3-b0a9-40868b8f8c7f)
-7. Press "Save Peaks" to save the new taged R-Peaks. This will create subfolder of the task in the output directory path you entered in the configuration file. It is possible to exit a file and return to it to continue tagging. Everytime you save for the same log file the old file will be saved in the old dir. Below an example of the output directory, where the outputdir in config.m was "yaelcodes/Maayan/PhysioOutput/HR", when saving for the first time , the "MIST" directory automaticly created.
+7. Press "Save Peaks" to save the newly tagged R-Peaks. This will create a subfolder of the task in the output directory path you entered in the configuration file. It is possible to exit a file and return to it to continue tagging. Every time you save for the same log file the old file will be saved in the old dir. Below is an example of the output directory, where the outputdir in config.m was "yaelcodes/Maayan/PhysioOutput/HR", when saving for the first time , the "MIST" directory automatically created.
 
     ![image](https://github.com/user-attachments/assets/6e63bac6-98b4-475d-b1db-1aabb4986a35)
 
-8. Output : each log file corresponds to mat file where we have pkx and pky values , those correspond to the signals R-peaks x and y. The pkx are the values of the time in seconds where R-peak occored , this can easily evaluate the mean HR and HRV per task.
+8. Output: Each log file corresponds to a mat file where we have pkx and pky values, these values correspond to the signals R-peaks x and y. The pkx are the values of the time in seconds where R-peak occurred, which can easily evaluate the mean HR and HRV per task.
 
    ![image](https://github.com/user-attachments/assets/c7e44882-8720-4faa-a4d0-d01ea5dbe9dd)
 
-9. Load new file: use << button on the app upper left side , this will redirect you to the loading window (3.) 
+9. Load new file: Use << button on the App upper left side to load a new file. This will redirect you to the loading window (3.)
      
     
 
